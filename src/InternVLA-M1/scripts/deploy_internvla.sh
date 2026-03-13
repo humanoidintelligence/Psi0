@@ -4,8 +4,8 @@
 
 export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 
-export TORCH_HOME=$TORCH_HOME # e.g. /hfm/boqian/torch_cache
-export HF_HOME=$HF_HOME # e.g. /hfm/boqian/torch_cache/huggingface
+export TORCH_HOME=$TORCH_HOME # e.g. /hfm/user/torch_cache
+export HF_HOME=$HF_HOME # e.g. /hfm/user/torch_cache/huggingface
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 source .venv/bin/activate
