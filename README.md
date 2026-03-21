@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2505.03233-df2a2a.svg)](https://arxiv.org/abs/2603.12263)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.12263-df2a2a.svg)](https://arxiv.org/abs/2603.12263)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://psi-lab.ai/Psi0)
 [![Model](https://img.shields.io/badge/Hugging%20Face-Model-yellow)](https://huggingface.co/USC-PSI-Lab/psi-model)
 [![Data](https://img.shields.io/badge/Hugging%20Face-Data-pink)](https://huggingface.co/datasets/USC-PSI-Lab/psi-data)
@@ -169,6 +169,8 @@ Now it's ready to finetune $\Psi_0$.
 ### Fine-Tuning
 
 > ✔️ Suppose the data is already collected and processed. Now we can proceed to fine-tune the $\Psi_0$ model.
+
+>  There is a [known issue](https://github.com/physical-superintelligence-lab/Psi0/issues/3) of loading our real data, apply this fix first `python patch_lerobot_meta.py $PSI_HOME/data/real/$task`
 
 > 📝 Here we illustrate by using the pre-collected data from [Huggingface psi-data](https://huggingface.co/datasets/USC-PSI-Lab/psi-data/tree/main/real).
 
