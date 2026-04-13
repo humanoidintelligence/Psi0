@@ -119,7 +119,8 @@ class FinetuneTrainer(Trainer):
             from safetensors.torch import load_file
             ckpt_path = self.model_cfg.pretrained_action_header_path
             state_dict = load_file(f"{ckpt_path}/action_header.safetensors")
-            if state_dict["action_proj_in.dec_pos"].shape[0] != self.model_cfg.action_chunk_size:
+            if (state_dict["action_proj_in.dec_pos"].shape[0] != self.model_cfg.action_chunk_size or
+                state_dict["action_proj_out.linear.weight"].shape[0] != self.model_cfg.action_dim):
                 # only load transformer blocks
                 reduced_state_dict = {}
                 for k, v in state_dict.items():
@@ -127,7 +128,7 @@ class FinetuneTrainer(Trainer):
                         reduced_state_dict[k] = v
                 overwatch.info(f"Loading pretrained action header from {ckpt_path}")
                 self.model.action_header.load_state_dict(reduced_state_dict, strict=False)
-                overwatch.warning("action_proj_in.dec_pos size mismatch, only loaded transformer blocks.")
+                overwatch.warning("action header size mismatch, only loaded transformer blocks.")
             else:
                 self.model.action_header.load_state_dict(state_dict, strict=False)
             overwatch.info("loaded pretrained action header successfully.")

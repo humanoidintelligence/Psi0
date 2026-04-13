@@ -411,16 +411,16 @@ export dr=level-0
 ```
 We use two different entrypoints for evaluating different tasks:
 
-set entrypoint and agent to `eval_decoupled_wbc.py` and `pi05_decoupled_wbc` if the evaluating task ends with `Teleop`, which means the task data is collected using teleoperation:
+set entrypoint and agent to `eval_decoupled_wbc.py` and `psi0_decoupled_wbc` if the evaluating task ends with `Teleop`, which means the task data is collected using teleoperation:
 ```
 export entry=eval_decoupled_wbc.py
-export agent=pi05_decoupled_wbc
+export agent=psi0_decoupled_wbc
 ```
 
-and set entrypoint and agent to `eval.py` and `pi05` if the evaluating task ends with `MP`, which means the task data is generated using CuRobo Motion planning:
+and set entrypoint and agent to `eval.py` and `psi0` if the evaluating task ends with `MP`, which means the task data is generated using CuRobo Motion planning:
 ```
 export entry=eval.py
-export entry=pi05
+export entry=psi0
 ```
 
 ```

@@ -16,7 +16,7 @@ fi
 RUN_DIR=$1
 CKPT_STEP=$2
 
-python src/dp/deploy/dp_g1_serve_simple.py \
+python src/dp/deploy/dp_g1_serve_real.py \
     --host=0.0.0.0 \
     --port=22085 \
     --run-dir=$RUN_DIR \

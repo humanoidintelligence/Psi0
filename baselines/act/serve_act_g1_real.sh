@@ -5,7 +5,7 @@ set -e
 export CUDA_VISIBLE_DEVICES=0
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"
 
-source .venv-dp/bin/activate
+source .venv-act/bin/activate
 
 # Accept RUN_DIR and CKPT_STEP as command line arguments
 if [ "$#" -ne 2 ]; then
@@ -16,7 +16,7 @@ fi
 RUN_DIR=$1
 CKPT_STEP=$2
 
-python src/dp/deploy/dp_g1_serve_simple.py \
+python src/act/deploy/act_g1_serve_real.py \
     --host=0.0.0.0 \
     --port=22085 \
     --run-dir=$RUN_DIR \
